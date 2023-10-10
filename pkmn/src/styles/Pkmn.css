@@ -1,0 +1,216 @@
+
+/**
+ *    Globals
+ * -------------------------------------------------- */
+
+body {
+	background-color: theme(colors.orange.50);
+}
+
+input[type="text"] {
+	border-radius: theme(borderRadius.full);
+	font-size: theme(fontSize.lg);
+	padding: theme(spacing.2) theme(spacing.4);
+	width: 100%
+}
+
+select {
+	font-size: theme(fontSize.lg);
+	padding: theme(spacing.1) theme(spacing.2);
+}
+
+
+/**
+ *    Loading Overlay
+ * -------------------------------------------------- */
+
+.loading-overlay {
+	align-items: center;
+	background: black;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: opacity 300ms ease-out;
+	width: 100vw;
+	z-index: 1;
+}
+
+.loading-overlay.is-loading { 
+	opacity: 100; 
+}
+
+.loading-overlay.not-loading { 
+	opacity: 0; 
+}
+
+
+.loading-overlay img {
+	display: block;
+	height: 6rem;
+	position: relative;
+	width: 6rem;
+	z-index: 2;
+}
+
+
+
+/**
+ *    Header
+ * -------------------------------------------------- */
+
+.pkmn-header {
+	background: theme(colors.red.500);
+	background: linear-gradient(180deg, theme(colors.pokeRed.BASE) 60%, theme(colors.pokeRed.dark) 100%);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.21);
+	padding: theme(spacing.4) theme(spacing.3) theme(spacing.6);
+}
+
+.pkmn-header h1 {
+	color: white;
+	font-size: theme(fontSize.6xl);
+	font-style: italic;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+
+/** --- Search options ------ */
+.pkmn-search-options { 
+	margin: 0 auto;
+	width: theme(width.4/5);
+}
+
+.pkmn-search-options label {
+	color: white;
+	font-size: theme(fontSize.xl);
+	margin-right: theme(spacing.4);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+
+.pkmn-search-option { 
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-bottom: theme(spacing.8);
+}
+
+.pkmn-search-option:last-of-type {
+	margin-bottom: theme(spacing.2);
+}
+
+@media screen(lg) {
+  .pkmn-search-option { margin-bottom: 0; }
+}
+
+
+/** --- Search bar ------ */
+.pkmn-search-bar { }
+
+.pkmn-search-bar input[type="text"] { 
+	border-color: theme(colors.red.900);
+	border-style: solid;
+	border-width: 1px;
+}
+
+/** --- Filter ------ */
+.pkmn-filter-types {}
+
+/** --- Sort ------ */
+.pkmn-sort-by {}
+
+.pkmn-filter-types select,
+.pkmn-sort-by select {
+	border-color: theme(colors.red.900);
+}
+
+/**
+ *    Cards
+ * -------------------------------------------------- */
+
+.pkmn-cards {}
+
+.pkmn-card {
+	background-color: white;
+	border-color: #cbd5e1;
+	border-radius: theme(borderRadius.md);
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 3px rgba(64, 64, 64, 0.21);
+	display: block;
+	padding: theme(spacing.4);
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.pkmn-card::before {
+	content: "";
+	display: block;
+	height: 9px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150%;
+	z-index: 5;
+}
+
+.pkmn-card-type-bug::before { background-color: theme(colors.bug); }
+.pkmn-card-type-dragon::before { background-color: theme(colors.dragon); }
+.pkmn-card-type-electric::before { background-color: theme(colors.electric); }
+.pkmn-card-type-fairy::before { background-color: theme(colors.fairy); }
+.pkmn-card-type-fighting::before { background-color: theme(colors.fighting); }
+.pkmn-card-type-fire::before { background-color: theme(colors.fire); }
+.pkmn-card-type-ghost::before { background-color: theme(colors.ghost); }
+.pkmn-card-type-grass::before { background-color: theme(colors.grass); }
+.pkmn-card-type-ground::before { background-color: theme(colors.ground); }
+.pkmn-card-type-ice::before { background-color: theme(colors.ice); }
+.pkmn-card-type-normal::before { background-color: theme(colors.normal); }
+.pkmn-card-type-poison::before { background-color: theme(colors.poison); }
+.pkmn-card-type-psychic::before { background-color: theme(colors.psychic); }
+.pkmn-card-type-rock::before { background-color: theme(colors.rock); }
+.pkmn-card-type-water::before { background-color: theme(colors.water); }
+
+.pkmn-card-image {
+	display: block;
+	margin: 0 auto;
+}
+
+.pkmn-card-id {
+	/* color: theme(colors.stone.400); */
+	font-size: theme(fontSize.sm);
+	font-weight: theme(fontWeight.bold);
+	opacity: theme(opacity.60);
+}
+
+.pkmn-card-title {
+	font-size: theme(fontSize.xl);
+	font-weight: theme(fontWeight.bold);
+}
+
+.pkmn-card-types {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.pkmn-card-types li {
+	font-size: theme(fontSize.sm);
+	opacity: theme(opacity.60);
+}
+
+.pkmn-card-types li::before {
+	background-color: theme(colors.slate.700);
+	border-radius: theme(borderRadius.full);
+	content: "";
+	display: inline-block;
+	height: 5px;
+	margin: 0 theme(spacing[1.5]);
+	position: relative;
+	transform: translateY(-2px);
+	width: 5px;
+}
+
+.pkmn-card-types li:first-child::before { display: none; }
