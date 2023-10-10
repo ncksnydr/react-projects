@@ -1,0 +1,129 @@
+/**
+ * --------------------------------------------------------------------------
+ *   QR Code Generator
+ * --------------------------------------------------------------------------
+*/
+
+/**
+ *    Top-level
+ * -------------------------------------------------- */
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	background-color: #f6f6f6;
+	font-size: theme(fontSize.base);
+	line-height: 1;
+}
+
+h1 {
+	font-size: theme(fontSize.3xl);
+	font-weight: theme(fontWeight.black);
+	text-align: center;
+}
+
+h2 {
+	font-size: theme(fontSize.xl);
+	font-weight: theme(fontWeight.bold);
+}
+
+input[type="text"],
+input[type="color"],
+select {
+	background-color: white;
+	border-color: theme(borderColor.slate.400);
+	border-style: solid;
+	border-width: 1px;
+}
+
+input[type="color"] { padding: 0; }
+
+.primary-btn {
+	background-color: theme(colors.primary.500);
+	border-width: 1px;
+	border-style: solid;
+	border-color: theme(colors.primary.700);
+	border-radius: theme(borderRadius.md);
+	color: white;
+	display: block;
+	font-size: theme(fontSize.2xl);
+	font-style: italic;
+	font-weight: theme(fontWeight.bold);
+	justify-content: center;
+	padding: theme(spacing.5) theme(spacing.12);
+	text-decoration: none;
+	text-shadow: 
+		0 2px 1px rgba(0,0,0, 0.15),
+		0 4px 1px rgba(255,255,255, 0.12);
+	transition: background-color 150ms ease-in-out;
+	
+}
+
+.primary-btn svg {
+	box-shadow: 
+		0 2px 1px rgba(0,0,0, 0.15),
+		0 4px 1px rgba(255,255,255, 0.12);
+	display: inline-block;
+	margin-right: theme(spacing.4);
+	position: relative;
+	transform: translateY(-4px);
+}
+
+.primary-btn:hover {
+	background-color: theme(colors.primary.600);
+}
+
+/**
+ *    Sections
+ * -------------------------------------------------- */
+.qr-code-gen {
+	background-color: white;
+	border-color: theme(borderColor.slate.300);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: theme(borderRadius.md);
+	box-shadow: 0 3px 3px 1px rgba(0,0,0, 0.06);
+	min-width: 45rem;
+	width: fit-content;
+}
+
+
+/** --- QR Code options ------ */
+.qr-code-gen-options {
+	width: 100%;
+}
+
+.qr-code-gen-options label {
+	display: block;
+	font-size: theme(fontSize.lg);
+	font-weight: theme(fontWeight.bold);
+	text-align: center;
+}
+
+.qr-code-gen-options input,
+.qr-code-gen-options select {
+	height: 30px;
+	width: 100%;
+}
+
+.qr-code-gen-options select {
+	padding-left: theme(spacing.3);
+	padding-right: theme(spacing.3);
+}
+
+
+
+/** --- QR Code text ------ */
+.qr-text {
+	display: block;
+	font-size: theme(fontSize.lg);
+	padding: theme(spacing.4) theme(spacing.4);
+	width: 100%;
+}
+
+/** --- QR Code image ------ */
+canvas#qr {
+	display: block;
+	margin: 0 auto;
+}

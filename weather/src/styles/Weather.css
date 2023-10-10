@@ -1,0 +1,222 @@
+/**
+ *    Globals
+ * -------------------------------------------------- */
+
+html,
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background-color: theme(colors.stone.200);
+	font-size: theme(fontSize.base);
+	line-height: 1;
+}
+
+input[type="text"] {
+	border: 2px solid theme(colors.slate.900);
+	border-radius: theme(borderRadius.lg);
+	font-size: theme(fontSize.lg);
+	padding: theme(spacing.[1.5]) 0 theme(spacing.[1.5]) theme(spacing.4);
+}
+
+.primary-btn svg {
+	height: 24px;
+	opacity: 0.75;
+	transition: opacity 300ms ease-in-out;
+	width: auto;
+}
+
+.primary-btn:hover svg { opacity: 1;}
+
+
+/**
+ *    Weather App
+ * -------------------------------------------------- */
+.weather-app {
+	border-radius: theme(borderRadius.lg);
+	border: 1px solid theme(colors.slate.800);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.27);
+	display: flex;
+	justify-content: center;
+	margin: theme(spacing.24) auto 0;
+	max-width: 39rem;
+	min-height: theme(height.72);
+	width: 100%;
+}
+
+.weather-app-overview,
+.weather-app-details {
+	flex: 1 1 auto;
+	overflow: hidden;
+}
+
+/**
+ *    Weather Overview
+ * -------------------------------------------------- */
+.weather-app-overview {
+	background-image: url('https://picsum.photos/800/900');
+	background-size: cover;
+	border-top-left-radius: theme(borderRadius.lg);
+	border-bottom-left-radius: theme(borderRadius.lg);
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-end;
+	max-width: 42%;
+	padding: theme(spacing.4) theme(spacing.12) theme(spacing.4) theme(spacing.4);
+	position: relative;
+	z-index: 1;
+}
+
+.weather-app-overview::before {
+	background: linear-gradient(180deg, rgba(0,0,0,0) 36%, rgba(0,0,0,0.60) 75%);
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.weather-app-overview-data { 
+	position: relative;
+	z-index: 3;
+}
+
+.weather-app-overview-day {
+	font-weight: theme(fontWeight.semibold);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.weather-app-overview-temp {
+	display: inline-block;
+	font-size: theme(fontSize.6xl);
+	font-weight: theme(fontWeight.bold);
+	line-height: 1;
+	position: relative;
+	text-shadow: 0 3px 1px rgba(0, 0, 0, 0.18);
+	transform: translateX(-2px);
+}
+
+.weather-app-overview-temp sup {
+	font-size: 42%;
+	position: absolute;
+	top: 30%;
+}
+
+.weather-app-overview-type {
+	display: flex;
+	flex-wrap: nowrap;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.weather-app-overview-type svg { 
+	height: theme(height.6);
+	width: theme(width.6);
+}
+
+
+/**
+ *    Weather Details
+ * -------------------------------------------------- */
+.weather-app-details {
+	background-color: theme(colors.slate.500);
+	border-top-right-radius: theme(borderRadius.lg);
+	border-bottom-right-radius: theme(borderRadius.lg);
+	color: white;
+	padding: theme(spacing.6);
+}
+
+
+/** --- Event nodes ------ */
+.event-node-wrapper {
+	display: grid;
+}
+
+.event-node {
+	background: theme(colors.slate.700);
+	border: 1px solid theme(colors.slate.900);
+	box-shadow: 
+		0 -1px 1px rgba(0,0,0,0.45),
+		inset 0 -1px 1px rgba(255,255,255,0.30);
+	border-radius: theme(borderRadius.lg);
+	flex: 0 1 auto;
+	text-align: center;
+}
+
+.event-node-header {
+	display: block;
+	font-weight: theme(fontWeight.bold);
+	letter-spacing: 0.075rem;
+	font-size: theme(fontSize.xs);
+	text-transform: uppercase;
+}
+
+.event-node-icon-wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.event-node-icon svg {
+	height: 30px;
+	margin-right: 3px;
+	width: auto;
+}
+
+.event-node-data  {
+	font-weight: theme(fontWeight.light);
+	font-size: theme(fontSize.2xl);
+}
+
+
+/** --- Location ------ */
+.weather-app-details-location {}
+
+.weather-app-details-city {
+	font-size: theme(fontSize.4xl);
+	font-weight: theme(fontWeight.black);
+	line-height: 1;
+}
+
+
+/** --- Sun Events ------ */
+.weather-app-details-sun-event {
+	margin-right: theme(spacing.4);
+	padding: theme(spacing[2.5]) theme(spacing.6);
+}
+
+
+/** --- Forecast ------ */
+.weather-app-details-forecast-daily {
+	margin-right: theme(spacing.3);
+	padding: theme(spacing[2.5]) theme(spacing.2);
+}
+
+/**
+ *    ZIP code input
+ * -------------------------------------------------- */
+.weather-location-search {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.weather-location-search input[type="text"] {
+	color: black;
+}
+
+.weather-location-search input[type="text"].has-error {
+	border-color: theme(colors.red.600);
+}
+
+.weather-location-search .error-message {
+	bottom: 100%;
+	display: inline;
+	margin-top: theme(spacing.1);
+	position: absolute;
+	transform: translateX(4px);
+}

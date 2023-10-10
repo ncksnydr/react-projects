@@ -1,0 +1,171 @@
+/**
+ * --------------------------------------------------------------------------
+ *   Password Generator
+ * --------------------------------------------------------------------------
+*/
+
+/**
+ *    Top-level
+ * -------------------------------------------------- */
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	background-color: #f6f6f6;
+	font-size: theme(fontSize.base);
+	line-height: 1;
+}
+
+h1 {
+	font-size: theme(fontSize.3xl);
+	font-weight: theme(fontWeight.black);
+	text-align: center;
+}
+
+h2 {
+	font-size: theme(fontSize.xl);
+	font-weight: theme(fontWeight.bold);
+}
+
+input[type="range"] {
+	border-radius: theme(borderRadius.lg);
+	width: 100%;
+}
+
+.primary-btn {
+	background-color: theme(colors.primary.500);
+	border-width: 1px;
+	border-style: solid;
+	border-color: theme(colors.primary.700);
+	border-radius: theme(borderRadius.md);
+	color: white;
+	font-size: theme(fontSize.2xl);
+	font-style: italic;
+	font-weight: theme(fontWeight.bold);
+	padding: theme(spacing.4) theme(spacing.4);
+	text-shadow: 
+		0 2px 1px rgba(0,0,0, 0.15),
+		0 4px 1px rgba(255,255,255, 0.12);
+	transition: background-color 150ms ease-in-out;
+}
+
+.primary-btn:hover {
+	background-color: theme(colors.primary.600);
+}
+
+/**
+ *    Sections
+ * -------------------------------------------------- */
+
+.passgen {
+	background-color: white;
+	border-color: theme(borderColor.slate.300);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: theme(borderRadius.md);
+	box-shadow: 0 3px 3px 1px rgba(0,0,0, 0.06);
+	max-width: 42rem;
+	min-width: 30rem;
+	width: 45%;
+}
+
+/** --- PassGen ------ */
+.password-window {
+	border-color: theme(borderColor.slate.400);
+	border-style: solid;
+	border-width: 1px;
+	display: flex;
+	font-size: theme(fontSize.lg);
+	justify-content: space-between;
+	padding: theme(spacing.4) theme(spacing.4);
+}
+
+.password-window-display {
+	flex: 1 1 auto;
+	font-family: theme(fontFamily.mono);
+}
+
+.password-btn-copy {
+	padding: theme(spacing.2);
+	opacity: theme(opacity.40);
+	transition: opacity 150ms;
+}
+
+.password-btn-copy:hover {
+	opacity: theme(opacity.100);
+}
+
+.password-btn-copy.active,
+.password-btn-copy.active:hover {
+	opacity: theme(opacity.100);
+}
+
+
+/** --- PasswordIndicator ------ */
+.password-indicator {
+	border-radius: theme(borderRadius.md);
+	height: 6px;
+	position: relative;
+	width: 100%;
+}
+
+.password-indicator::before {
+	border-radius: inherit;
+	content: "";
+	height: 100%;
+	position: absolute;
+	transition: width 300ms ease-in-out;
+	width: 50%;
+}
+
+.password-indicator.weak::before {
+	background: theme(colors.rose.500);
+	width: theme(width.1/4);
+}
+
+.password-indicator.okay::before {
+	background: theme(colors.amber.400);
+	width: theme(width.2/4);
+}
+
+.password-indicator.strong::before {
+	background: theme(colors.emerald.500);
+	width: theme(width.full);
+}
+
+/** --- PasswordLength ------ */
+.password-length {
+	width: 100%;
+}
+
+.password-length-details {
+	display: flex;
+	justify-content: space-between;
+}
+
+.password-length-number {
+	font-size: theme(fontSize.xl);
+	font-weight: theme(fontWeight.bold);
+
+}
+
+
+/** --- PasswordSettings ------ */
+.password-settings-options {
+	
+}
+
+.password-settings-options li {
+	margin-bottom: theme(spacing.3);
+}
+
+.password-settings-options input { 
+	margin-right: theme(spacing.2);
+	height: 18px;
+	width: 18px;
+}
+
+.password-settings-options label { 
+	font-size: theme(fontSize.lg);
+}
